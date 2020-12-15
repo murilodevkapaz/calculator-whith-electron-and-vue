@@ -1,20 +1,38 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
-import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+import {
+  app,
+  protocol,
+  BrowserWindow
+} from 'electron'
+import {
+  createProtocol
+} from 'vue-cli-plugin-electron-builder/lib'
+import installExtension, {
+  VUEJS_DEVTOOLS
+} from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([
-  { scheme: 'app', privileges: { secure: true, standard: true } }
-])
+protocol.registerSchemesAsPrivileged([{
+  scheme: 'app',
+  privileges: {
+    secure: true,
+    standard: true
+  }
+}])
 
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 250,
-    height: 360,
+    height: 350,
+    center: true,
+    minHeight: 350,
+    minWidth: 250,
+    maxHeight: 30,
+    // frame: false,
+    autoHideMenuBar: true,
     // resizable:\ false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
@@ -32,7 +50,10 @@ async function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+  Menu.setApplicationMenu(false)
 }
+
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
