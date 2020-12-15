@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :class="{ dual }" @click="$emit('onClick', label)">
+  <button class="button" :class="{ dual }" @click="$emit('onClick', label)" @keyup="$emit('onKeyup', label)">
     {{ label }}
   </button>
 </template>

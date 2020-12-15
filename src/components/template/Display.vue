@@ -12,6 +12,11 @@ export default {
 </script>
 
 <style>
+    @font-face {
+        font-family: "Orbitron";
+        src: url("../../assets/fonts/Orbitron-Regular.ttf");
+    }
+
     .display{
         width: 100%;
         height: 40px;
@@ -20,7 +25,8 @@ export default {
         border-radius: 2px;
         padding: 6px;
         box-sizing: border-box;
-        font-size: 25px;
+        font-size: 20pxx;
+        font-family: "Orbitron", sans-serif;
 
         display: flex;
         justify-content:flex-end;
