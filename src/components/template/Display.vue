@@ -25,7 +25,7 @@ export default {
         border-radius: 2px;
         padding: 6px;
         box-sizing: border-box;
-        font-size: 20pxx;
+        font-size: 20px;
         font-family: "Orbitron", sans-serif;
 
         display: flex;
